@@ -83,26 +83,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun answer(view: View) {
-        val newAns = disp.text.toString().toDouble()
-        var finalAns: Double? =null
-        when(op){
-            "*"->{
-                finalAns = oldNumber.toDouble() * newAns
+        try {
+            val newAns = disp.text.toString().toDouble()
+            var finalAns: Double? = null
+            when (op) {
+                "*" -> {
+                    finalAns = oldNumber.toDouble() * newAns
+                }
+                "/" -> {
+                    finalAns = oldNumber.toDouble() / newAns
+                }
+                "-" -> {
+                    finalAns = oldNumber.toDouble() - newAns
+                }
+                "+" -> {
+                    finalAns = oldNumber.toDouble() + newAns
+                }
             }
-            "/"->{
-                finalAns = oldNumber.toDouble() / newAns
-            }
-            "-"->{
-                finalAns = oldNumber.toDouble() - newAns
-            }
-            "+"->{
-                finalAns = oldNumber.toDouble() + newAns
-            }
+            disp.setText(finalAns.toString())
+            newOp = true
+        }catch (e:Exception){
+            disp.setText("")
         }
-        disp.setText(finalAns.toString())
-        newOp = true
     }
-
-
-
 }
