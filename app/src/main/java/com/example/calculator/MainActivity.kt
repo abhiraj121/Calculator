@@ -6,91 +6,103 @@ import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
-
-    var answer : Int = 0
-    lateinit var calc: Array<Array<Button>>
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
 
-        calc = arrayOf(
-            arrayOf(no7,no8,no9,divide),
-            arrayOf(no4,no5,no6,product),
-            arrayOf(no1,no2,no3,minus),
-            arrayOf(decimal,no0,result,sum)
-        )
+    fun clean(view: View) {
+        disp.setText("")
+    }
 
-        for (i in calc) {
-            for (button in i) {
-                button.setOnClickListener(this)
+    fun operationStart(view: View) {
+        if(newOp==true){
+            disp.text=""
+        }
+        newOp = false
+        val btnStart = view as Button
+        var num:String = disp.text.toString()
+        when(btnStart.id){
+            no0.id-> {
+                num+="0"}
+            no1.id-> {
+                num+="1"}
+            no2.id-> {
+                num+="2"}
+            no3.id-> {
+                num+="3"}
+            no4.id-> {
+                num+="4"}
+            no5.id-> {
+                num+="5"}
+            no6.id-> {
+                num+="6"}
+            no7.id-> {
+                num+="7"}
+            no8.id-> {
+                num+="8"}
+            no9.id-> {
+                num+="9"}
+            decimal.id-> {
+                num+="."}
+            product.id-> {
+                num+="X"}
+            minus.id-> {
+                num+="-"}
+            divide.id-> {
+                num+="/"}
+            sum.id-> {
+                num+="+"}
+        }
+        disp.setText(num)
+    }
+
+    var op:String?= null
+    var oldNumber = ""
+    var newOp = true
+    fun operationMid(view: View) {
+        var btnMid = view as Button
+        when(btnMid.id) {
+            sum.id->{
+                op = "*"
+            }
+            divide.id->{
+                op = "/"
+            }
+            minus.id->{
+                op = "-"
+            }
+            product.id->{
+                op = "*"
             }
         }
-
+        oldNumber = disp.text.toString()
+        newOp = true
     }
 
-    override fun onClick(v: View) {
-        when(v.id) {
-            R.id.divide -> {
-                updateDisplay("/")
+    fun answer(view: View) {
+        val newAns = disp.text.toString().toDouble()
+        var finalAns: Double? =null
+        when(op){
+            "*"->{
+                finalAns = oldNumber.toDouble() * newAns
             }
-            R.id.product -> {
-                updateDisplay("X")
+            "/"->{
+                finalAns = oldNumber.toDouble() / newAns
             }
-            R.id.minus -> {
-                updateDisplay("-")
+            "-"->{
+                finalAns = oldNumber.toDouble() - newAns
             }
-            R.id.sum -> {
-                updateDisplay("+")
-            }
-            R.id.no1 -> {
-                updateDisplay("1")
-                answer = 1
-            }
-            R.id.no2 -> {
-                updateDisplay("2")
-                answer = 2
-            }
-            R.id.no3 -> {
-                updateDisplay("3")
-                answer = 3
-            }
-            R.id.no4 -> {
-                updateDisplay("4")
-                answer = 4
-            }
-            R.id.no5 -> {
-                updateDisplay("5")
-                answer = 5
-            }
-            R.id.no6 -> {
-                updateDisplay("6")
-                answer = 6
-            }
-            R.id.no7 -> {
-                updateDisplay("7")
-                answer = 7
-            }
-            R.id.no8 -> {
-                updateDisplay("8")
-                answer = 8
-            }
-            R.id.no9 -> {
-                updateDisplay("9")
-                answer = 9
-            }
-            R.id.decimal -> {
-                updateDisplay(".")
+            "+"->{
+                finalAns = oldNumber.toDouble() + newAns
             }
         }
-
-
+        disp.setText(finalAns.toString())
+        newOp = true
     }
 
 
-    private fun updateDisplay(text: String) {
-        disp.text = answer + text
-    }
 
 }
