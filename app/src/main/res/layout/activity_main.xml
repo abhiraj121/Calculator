@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_weight="5"
-    android:layout_margin="10dp"
+    android:background="@color/Gray"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -14,7 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-        <Button android:id="@+id/reset"
+        <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
+            android:id="@+id/reset"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Clear"
@@ -23,6 +26,7 @@
             android:layout_weight="3"/>
 
         <TextView
+            android:textColor="@color/White"
             android:id="@+id/disp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,6 +44,8 @@
         android:layout_weight="1">
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:id="@+id/no7"
             android:onClick="operationStart"
             android:layout_width="match_parent"
@@ -49,6 +55,8 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:id="@+id/no8"
             android:onClick="operationStart"
             android:layout_width="match_parent"
@@ -58,6 +66,8 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no9"
             android:layout_width="match_parent"
@@ -67,7 +77,9 @@
             android:layout_weight="1"/>
 
         <Button
-            android:onClick="operationMid"
+            android:textColor="@android:color/white"
+            android:layout_margin="2dp"
+            android:background="@android:color/holo_orange_dark"            android:onClick="operationMid"
             android:id="@+id/divide"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -83,6 +95,8 @@
         android:layout_weight="1">
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no4"
             android:layout_width="match_parent"
@@ -92,6 +106,8 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no5"
             android:layout_width="match_parent"
@@ -101,6 +117,8 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no6"
             android:layout_width="match_parent"
@@ -110,6 +128,9 @@
             android:layout_weight="1"/>
 
         <Button
+            android:textColor="@android:color/white"
+            android:layout_margin="2dp"
+            android:background="@android:color/holo_orange_dark"
             android:onClick="operationMid"
             android:id="@+id/product"
             android:layout_width="match_parent"
@@ -126,6 +147,8 @@
         android:layout_weight="1">
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no1"
             android:layout_width="match_parent"
@@ -135,6 +158,8 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no2"
             android:layout_width="match_parent"
@@ -144,6 +169,8 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no3"
             android:layout_width="match_parent"
@@ -153,6 +180,9 @@
             android:layout_weight="1"/>
 
         <Button
+            android:textColor="@android:color/white"
+            android:layout_margin="2dp"
+            android:background="@android:color/holo_orange_dark"
             android:onClick="operationMid"
             android:id="@+id/minus"
             android:layout_width="match_parent"
@@ -169,6 +199,8 @@
         android:layout_weight="1">
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/decimal"
             android:layout_width="match_parent"
@@ -178,6 +210,8 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@color/White"
             android:onClick="operationStart"
             android:id="@+id/no0"
             android:layout_width="match_parent"
@@ -187,18 +221,21 @@
             android:layout_weight="1"/>
 
         <Button
+            android:layout_margin="2dp"
+            android:background="@android:color/holo_green_dark"
             android:id="@+id/result"
             android:onClick="answer"
-            android:layout_margin="5.5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/holo_orange_dark"
             android:textColor="@android:color/white"
             android:text="="
             android:textSize="40sp"
             android:layout_weight="1"/>
 
         <Button
+            android:textColor="@android:color/white"
+            android:layout_margin="2dp"
+            android:background="@android:color/holo_orange_dark"
             android:onClick="operationMid"
             android:id="@+id/sum"
             android:layout_width="match_parent"

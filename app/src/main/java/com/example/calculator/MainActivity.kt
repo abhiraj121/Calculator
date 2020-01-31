@@ -56,17 +56,21 @@ class MainActivity : AppCompatActivity() {
             sum.id-> {
                 num+="+"}
         }
+        if(num.length>9){
+            num = ""
+        }
         disp.setText(num)
     }
 
     var op:String?= null
     var oldNumber = ""
     var newOp = true
+
     fun operationMid(view: View) {
         var btnMid = view as Button
         when(btnMid.id) {
             sum.id->{
-                op = "*"
+                op = "+"
             }
             divide.id->{
                 op = "/"
